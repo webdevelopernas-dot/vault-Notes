@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 33% 3%;
+    --foreground: 210 40% 96%;
+    --card: 240 25% 6%;
+    --card-foreground: 210 40% 96%;
+    --popover: 240 25% 8%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 174 72% 56%;
+    --primary-foreground: 240 33% 3%;
+    --secondary: 240 15% 12%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 240 15% 15%;
+    --muted-foreground: 215 20% 50%;
+    --accent: 174 72% 56%;
+    --accent-foreground: 240 33% 3%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 174 72% 56%;
+    --radius: 0.75rem;
+    --chart-1: 174 72% 56%;
+    --chart-2: 43 96% 56%;
+    --chart-3: 271 91% 65%;
+    --chart-4: 142 76% 36%;
+    --chart-5: 25 95% 53%;
+    --sidebar-background: 240 25% 5%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-primary: 174 72% 56%;
+    --sidebar-primary-foreground: 210 40% 96%;
+    --sidebar-accent: 240 15% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 240 10% 18%;
+    --sidebar-ring: 174 72% 56%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(94, 234, 212, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(94, 234, 212, 0.4);
+}
+
+/* Liquid Glass Effect */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+.liquid-glass-strong {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15), 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* Card Hover Effect */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(94, 234, 212, 0.08);
+}
+
+/* Glowing Border */
+.glow-border {
+  border: 1px solid rgba(94, 234, 212, 0.15);
+}
+.glow-border:hover {
+  border-color: rgba(94, 234, 212, 0.3);
+}
+
+/* Syntax Highlighting Base */
+pre code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Stagger delays */
+.stagger-1 { animation-delay: 0.05s; opacity: 0; }
+.stagger-2 { animation-delay: 0.1s; opacity: 0; }
+.stagger-3 { animation-delay: 0.15s; opacity: 0; }
+.stagger-4 { animation-delay: 0.2s; opacity: 0; }
+.stagger-5 { animation-delay: 0.25s; opacity: 0; }
+.stagger-6 { animation-delay: 0.3s; opacity: 0; }
+
+/* Mobile bottom nav safe area */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
